@@ -64,7 +64,7 @@ export const Calendar: React.FC = () => {
 				<EventInfoModal
 					event={selectedEvent}
 					onClose={closeEventModal}
-					joinEventModalOpen={setIsJoinEventModalOpen} // Добавьте эту строку
+					joinEventModalOpen={setIsJoinEventModalOpen} 
 				/>
 			)}
 			{isAuthModalOpen && <AuthModal onClose={closeAuthModal} />}

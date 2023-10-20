@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import { Button, ButtonProps } from "./components/Buttons"; // Import ButtonProps
+import { Button, ButtonProps } from "./components/Buttons"; 
 import { getCurrentUser, createEventWithParticipants } from "./requests";
-import { Input, InputProps } from "./components/InputComp"; // Import InputProps
+import { Input, InputProps } from "./components/InputComp"; 
 import ParticipantSelect from "./ParticipantSelect";
 import { Participant } from "./components/Participant";
 import DatePicker from "react-datepicker";
@@ -21,9 +21,9 @@ export const CreateEvent: React.FC<CreateEventProps> = ({ onClose }) => {
   const [eventData, setEventData] = useState({
     title: "",
     description: "",
-    selectedUsers: [] as any[], // Specify the type for selectedUsers
-    photos: [] as any[], // Specify the type for photos
-    startDate: null as Date | null, // Specify the type for startDate
+    selectedUsers: [] as any[], 
+    photos: [] as any[], 
+    startDate: null as Date | null,
     location: "",
     time: "",
   });
