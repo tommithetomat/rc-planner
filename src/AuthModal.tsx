@@ -31,18 +31,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [username, setUsername] = useState("");
 	const [error, setError] = useState<string | null>(null);
-	const [isRegistered, setIsRegistered] = useState<boolean | null>(null);
+	const [setIsRegistered] = useState<boolean | null>(null);
 	const [step, setStep] = useState(1);
 
+	
 	const validatePassword = (value: string) => {
 		const passwordRegex = /^[A-Za-z0-9.,:;?!*+%<>\[\]{}\\_{}$#@\-]{8,32}$/;
 		return passwordRegex.test(value);
 	};
 
-	const validateUsername = (value: string) => {
-		const usernameRegex = /^[A-ZА-Я][a-zа-я]{1,19}$/;
-		return usernameRegex.test(value);
-	};
+	// const validateUsername = (value: string) => {
+	// 	const usernameRegex = /^[A-ZА-Я][a-zа-я]{1,19}$/;
+	// 	return usernameRegex.test(value);
+	// };
 
 	const handleNextStep = async () => {
 		const parts = email.split("@");
