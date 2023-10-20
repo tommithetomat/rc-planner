@@ -5,10 +5,10 @@ interface ParticipantProps {
   participant: {
     id: number;
     username: string;
-    photo?: string; // Make the 'photo' property optional
+    photo?: string; 
   };
-  author?: boolean; // Make the 'author' property optional
-  onlyImg?: boolean; // Make the 'onlyImg' property optional
+  author?: boolean; 
+  onlyImg?: boolean; 
 }
 
 export const Participant: React.FC<ParticipantProps> = ({
@@ -36,7 +36,7 @@ export const Participant: React.FC<ParticipantProps> = ({
           <p className="w-full text-start truncate p-px">
             {participant.username}
           </p>
-          {typeof author === "boolean" && ( // Check if 'author' is a boolean before rendering
+          {typeof author === "boolean" && (
             author ? (
               <div className="h-4 px-1 py-[0.4rem] bg-purple-200 rounded-lg items-center inline-flex">
                 Организатор

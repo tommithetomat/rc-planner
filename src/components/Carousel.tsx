@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { arrowLeft, arrowRight } from "../all-func";
 import { Button } from "./Buttons";
 
-interface CustomSliderProps {
+export interface CustomSliderProps {
 	images: { url: string }[];
 }
 

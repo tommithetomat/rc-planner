@@ -35,7 +35,7 @@ const ParticipantSelect: React.FC<ParticipantSelectProps> = ({ onParticipantsCha
   }, [userToken]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value || ""); 
   };
 
   const handleParticipantClick = (user: any) => {
@@ -120,7 +120,7 @@ const ParticipantSelect: React.FC<ParticipantSelectProps> = ({ onParticipantsCha
                 {filteredUsers.map(user => (
                   <li
                     key={user.id}
-                    className="cursor-pointer hover:bg-gray-100 p-2 rounded-2xl"
+                    className="cursor-pointer hover-bg-gray-100 p-2 rounded-2xl"
                     onClick={() => handleParticipantClick(user)}
                   >
                     <Participant participant={user} />

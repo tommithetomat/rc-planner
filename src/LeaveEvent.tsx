@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./components/Buttons";
 import { leaveEvent } from "./requests";
 
-interface LeaveEventProps {
+export interface LeaveEventProps {
   event: {
     id: number;
     title: string;

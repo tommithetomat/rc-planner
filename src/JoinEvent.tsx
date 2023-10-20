@@ -3,7 +3,7 @@ import hand from "./img/hand.png";
 import { formatDate, dayOfTheWeek, formatTime } from "./func";
 import { Button } from "./components/Buttons";
 
-interface JoinEventProps {
+export interface JoinEventProps {
   event: {
     title: string;
     dateStart: string;

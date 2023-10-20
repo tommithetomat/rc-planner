@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { uploadFile } from "./requests";
 
 interface PhotoUploaderProps {
-  onUploadPhoto: (photos: any[]) => void; // Replace 'any[]' with the actual type for photos
+  onUploadPhoto: (photos: any[]) => void; 
 }
 
 const PhotoUploader: React.FC<PhotoUploaderProps> = ({ onUploadPhoto }) => {
-  const [uploadedPhotos, setUploadedPhotos] = useState<any[]>([]); // Replace 'any[]' with the actual type for photos
-  const userToken = localStorage.getItem("authToken");
+  const [uploadedPhotos, setUploadedPhotos] = useState<any[]>([]); 
+  const userToken = localStorage.getItem("authToken") || ""; 
   const BASE_URL = "https://planner.rdclr.ru";
 
   const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { capitalize, formatMonth, arrowLeft, arrowRight } from "./all-func";
 import { getYear } from "date-fns";
-import { Button } from "./components/Buttons";
+import { Button, ButtonProps } from "./components/Buttons"; 
 import logo from "./img/logo.png";
 import head from "./img/Ellipse 1.png";
 
@@ -46,13 +46,13 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
             label={arrowLeft}
             onClick={prevMonth}
             padding="px-4 py-2"
-          ></Button>
+          />
           <Button
             color="gray"
             label={arrowRight}
             onClick={nextMonth}
             padding="px-4 py-2"
-          ></Button>
+          />
         </div>
         <div className="flex flex-row items-center ml-[3.75rem] gap-3 px">
           <Button

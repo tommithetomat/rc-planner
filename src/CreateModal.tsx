@@ -1,6 +1,6 @@
 import React from "react";
 import unicorn from "./img/unicorn.png";
-import { Button } from "./components/Buttons";
+import { Button, ButtonProps } from "./components/Buttons";
 
 const backgroundStyle: React.CSSProperties = {
   backgroundImage: `url(${unicorn})`,

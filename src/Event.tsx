@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Button } from "./components/Buttons";
+import { Button, ButtonProps } from "./components/Buttons";
 import EventDetails from "./EventDetails";
 import { EventParticipants } from "./EventParticipants";
 import EventPhotos from "./EventPhotos";
 import { joinEvent } from "./requests";
-import  LeaveEvent  from "./LeaveEvent";
+import LeaveEvent from "./LeaveEvent";
 import { parseISO } from "date-fns";
+import {AuthModal} from "./AuthModal"; 
 
 interface EventInfoModalProps {
   event: {
@@ -47,7 +48,7 @@ interface EventInfoModalProps {
       provider_metadata: string | null;
       createdAt: string;
       updatedAt: string;
-    }>
+    }>;
     participants: Array<{
       id: number;
       username: string;
@@ -111,7 +112,7 @@ export const EventInfoModal: React.FC<EventInfoModalProps> = ({
   };
 
   const checkUser = event?.participants.some(
-    (participant) => participant.id === +userId
+    (participant) => participant.id === +userId!
   );
 
   const isEventActive = event

@@ -4,8 +4,8 @@ import {
   startOfMonth,
   endOfMonth,
   addDays,
-  subMonths, 
-  addMonths, 
+  subMonths,
+  addMonths,
   isSameDay,
   isWeekend,
 } from "date-fns";
@@ -15,8 +15,8 @@ import { useCalendarState } from "./calendarState";
 
 interface CalendarGridProps {
   currentDate: Date;
-  events: any[]; 
-  handleEventClick: (event: any, index: number) => void; 
+  events: any[];
+  handleEventClick: (event: any, index: number) => void;
   isToday: (date: Date) => boolean;
 }
 
@@ -75,7 +75,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
                 >
                   <div
                     className={`text-lg absolute top-2 right-2  ${
-                      grayDay && "text-neutral-400"
+                      grayDay ? "text-neutral-400" : ""
                     }`}
                   >
                     {formatDay(day)}

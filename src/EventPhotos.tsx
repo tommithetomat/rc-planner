@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomSlider } from "./components/Carousel";
-import { EventInfoModalProps } from "./EventInfoModal";
+import { EventInfoModalProps } from "./Event";
 
 interface EventPhotosProps {
   photos: EventInfoModalProps["event"]["photos"];

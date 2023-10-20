@@ -1,17 +1,17 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import { Button } from "./components/Buttons";
+import { Button, ButtonProps } from "./components/Buttons"; // Import ButtonProps
 import { getCurrentUser, createEventWithParticipants } from "./requests";
-import { Input } from "./components/InputComp";
+import { Input, InputProps } from "./components/InputComp"; // Import InputProps
 import ParticipantSelect from "./ParticipantSelect";
 import { Participant } from "./components/Participant";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ru from "date-fns/locale/ru";
 import { format, parse, addMinutes } from "date-fns";
-import  PhotoUploader  from "./PhotoUploader";
+import PhotoUploader from "./PhotoUploader";
 import { calendarSvg } from "./all-func";
 import { useCalendarState } from "./calendarState";
-import  LeaveNeWEvent  from "./LeaveNewEvent";
+import LeaveNeWEvent from "./LeaveNewEvent";
 
 interface CreateEventProps {
   onClose: () => void;
@@ -171,29 +171,29 @@ export const CreateEvent: React.FC<CreateEventProps> = ({ onClose }) => {
             <div className="flex flex-row gap-2">
               <DatePicker
                 showIcon
-				selected={eventData.startDate}
-				onChange={handleDateSelect}
-				placeholderText="Начало*"
-				dateFormat="dd.MM.yyyy"
-				className="border border-gray-400 rounded-xl font-ttcommons h-[3.6rem] text-sm font-normal focus:outline-none"
-				locale={ru}
-				selectsStart
-				startDate={eventData.startDate}
-				endDate={eventData.endDate}
-				icon={calendarSvg}
+                selected={eventData.startDate}
+                onChange={handleDateSelect}
+                placeholderText="Начало*"
+                dateFormat="dd.MM.yyyy"
+                className="border border-gray-400 rounded-xl font-ttcommons h-[3.6rem] text-sm font-normal focus:outline-none"
+                locale={ru}
+                selectsStart
+                startDate={eventData.startDate}
+                endDate={eventData.endDate}
+                icon={calendarSvg}
               />
               <DatePicker
                 showIcon
-				selected={eventData.endDate}
-				onChange={handleDateSelect}
-				placeholderText="Конец"
-				dateFormat="dd.MM.yyyy"
-				className="border border-gray-400 rounded-xl font-ttcommons h-[3.6rem] text-sm font-normal focus:outline-none"
-				locale={ru}
-				selectsEnd
-				startDate={eventData.startDate}
-				endDate={eventData.endDate}
-				icon={calendarSvg}
+                selected={eventData.endDate}
+                onChange={handleDateSelect}
+                placeholderText="Конец"
+                dateFormat="dd.MM.yyyy"
+                className="border border-gray-400 rounded-xl font-ttcommons h-[3.6rem] text-sm font-normal focus:outline-none"
+                locale={ru}
+                selectsEnd
+                startDate={eventData.startDate}
+                endDate={eventData.endDate}
+                icon={calendarSvg}
               />
             </div>
             <div className="border border-gray-400 rounded-xl font-ttcommons w-[22.125rem] h-[3.75rem] text-sm font-normal p-4 relative">

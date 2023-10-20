@@ -29,7 +29,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [isRegistered, setIsRegistered] = useState<boolean | null>(false); // Изменено на 'false'
+  const [isRegistered, setIsRegistered] = useState<boolean | null>(false); 
   const [step, setStep] = useState(1);
 
   const validatePassword = (value: string) => {
