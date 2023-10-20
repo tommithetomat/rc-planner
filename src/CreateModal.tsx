@@ -11,6 +11,8 @@ const backgroundStyle: React.CSSProperties = {
 
 interface CreateModalProps {
   onClose: () => void;
+  event:{};
+  userToken: string | null;
 }
 
 export const CreateModal: React.FC<CreateModalProps> = ({ onClose }) => {
@@ -29,7 +31,7 @@ export const CreateModal: React.FC<CreateModalProps> = ({ onClose }) => {
         <div className="h-full mt-[5.5rem] ml-[5rem] font-redcollar">
           <h2 className="text-[4rem]">Ура!</h2>
           <h2 className="text-[1.125rem]">Вы добавили новое событие</h2>
-          <Button color="black" label={"Отлично"} onClick={onClose} />
+          <Button color="black" width={null} label={"Отлично"} onClick={onClose} />
         </div>
       </div>
     </div>

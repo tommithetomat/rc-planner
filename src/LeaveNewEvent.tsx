@@ -22,8 +22,8 @@ const LeaveNewEvent: React.FC<LeaveNewEventProps> = ({
         <div className="h-full mt-[5.5rem] ml-24 mr-24 font-redcollar flex flex-col items-center">
           <h2 className="text-4xl mb-16 text-center">Передумали создавать событие?</h2>
           <div className="flex flex-row gap-6 justify-center items-center">
-            <Button border="black" label={"Нет"} onClick={newEventLeaveModal} />
-            <Button color="black" label={"Да"} onClick={onClose} />
+            <Button border="black" label={"Нет"} onClick={newEventLeaveModal} width={null} />
+            <Button color="black" label={"Да"} onClick={onClose} width={null} />
           </div>
         </div>
       </div>

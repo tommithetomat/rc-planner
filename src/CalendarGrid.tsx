@@ -89,27 +89,27 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
                       .map((event, index) => {
                         const isUserOwner = event.owner?.id == userId;
                         const isUserParticipant = event.participants.some(
-                          (participant) => participant.id == userId
+                          (participant: { id: string | null; }) => participant.id == userId
                         );
                         const whatFigure = isUserOwner
                           ? "star"
                           : isUserParticipant
                           ? "circle"
-                          : "default";
+                          : 'default';
 
                         const whoInEvent = isUserOwner
                           ? "created"
                           : isUserParticipant
                           ? "accede"
-                          : "default";
+                          : 'default';
 
                         return (
                           <EventComponent
                             key={event.id}
                             dateStart={event.dateStart}
                             label={event.title}
-                            onEvent={isAuthenticated && whoInEvent}
-                            figure={isAuthenticated && whatFigure}
+                            onEvent={isAuthenticated ? whoInEvent : 'default'}
+                            figure={isAuthenticated ? whatFigure : 'default'} 
                             onClick={() => handleEventClick(event, index)}
                           />
                         );

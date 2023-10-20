@@ -7,7 +7,7 @@ export interface LeaveEventProps {
     id: number;
     title: string;
   };
-  userToken: string;
+  userToken: string | null;
   onClose: () => void;
   leaveModal: () => void;
 }
@@ -18,6 +18,9 @@ const LeaveEvent: React.FC<LeaveEventProps> = ({
   onClose,
   leaveModal,
 }) => {
+  if(event) {
+    
+  }
   const leaveJoinEvent = async () => {
     try {
       await leaveEvent(event.id, userToken);
@@ -41,8 +44,8 @@ const LeaveEvent: React.FC<LeaveEventProps> = ({
             Вы действительно хотите отменить участие?
           </h2>
           <div className="flex flex-row gap-6 justify-center items-center">
-            <Button border="black" label={"Нет"} onClick={leaveModal} />
-            <Button color="black" label={"Да"} onClick={leaveJoinEvent} />
+            <Button border="black" width={null} label={"Нет"} onClick={leaveModal} />
+            <Button color="black" width={null} label={"Да"} onClick={leaveJoinEvent} />
           </div>
         </div>
       </div>

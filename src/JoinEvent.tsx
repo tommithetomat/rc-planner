@@ -5,7 +5,7 @@ import { Button } from "./components/Buttons";
 
 export interface JoinEventProps {
   event: {
-    title: string;
+    title: string ;
     dateStart: string;
     location: string;
   };
@@ -46,7 +46,7 @@ const JoinEvent: React.FC<JoinEventProps> = ({ event, onClose }) => {
           <p className="font-ttcommons mt-2 mb-10 text-xl leading-none">
             {event.location}
           </p>
-          <Button color="black" label={"Отлично"} onClick={onClose} />
+          <Button color="black" label={"Отлично"} width={null} onClick={onClose} />
         </div>
       </div>
     </div>

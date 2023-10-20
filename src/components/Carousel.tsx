@@ -42,12 +42,14 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({ images }) => {
 								label={arrowLeft}
 								onClick={handlePrevClick}
 								padding="px-4 py-2"
+								width={null}
 							></Button>
 							<Button
 								color="gray"
 								label={arrowRight}
 								onClick={handleNextClick}
 								padding="px-4 py-2"
+								width={null}
 							></Button>
 						</div>
 					)}

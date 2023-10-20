@@ -149,13 +149,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
             <Input
               label="E-mail"
               value={email.toLocaleLowerCase()}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              onChange={e =>
                 setEmail(e.target.value)
               }
               error={error}
               placeholder="Enter email"
               typeOf="password"
               width={"w-[21.265rem]"}
+              showhide={null}
+              size={null}
+              right={null}
             />
             <div className="flex justify-center">
               <Button
@@ -173,15 +176,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
             <Input
               label={"Пароль"}
               value={password}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              onChange={e =>
                 setPassword(e.target.value)
               }
-              type="password"
-              placeholder="Введите пароль"
               typeOf="password"
+              placeholder="Введите пароль"
               width={"w-[21.265rem]"}
               showhide={true}
               right={"right-36"}
+              size={null}
+              error={null}
             />
             <div className="flex justify-center">
               <Button
@@ -206,7 +210,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
             <Input
               label="Имя"
               value={username}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              onChange={e =>
                 setUsername(e.target.value)
               }
               placeholder="Введите ваше имя"
@@ -214,32 +218,37 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
               maxLength={20}
               typeOf="password"
               width={"w-[21.265rem]"}
+              size={null}
+              showhide={null}
+              right={null}
             />
             <Input
               label="Пароль"
               value={password}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              onChange={e =>
                 setPassword(e.target.value)
               }
-              type="password"
               placeholder="Введите пароль"
               error={error}
               typeOf="password"
               width={"w-[21.265rem]"}
               showhide={true}
+              size={null}
+              right={null}
             />
             <Input
               label="Повторите пароль"
               value={confirmPassword}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              onChange={e =>
                 setConfirmPassword(e.target.value)
               }
-              type="password"
               placeholder="Повторите пароль"
               error={error}
               typeOf="password"
               width={"w-[21.265rem]"}
               showhide={true}
+              size={null}
+              right={null}
             />
             <div className="flex justify-center">
               <Button

@@ -5,12 +5,12 @@ import { Button, ButtonProps } from "./components/Buttons";
 import logo from "./img/logo.png";
 import head from "./img/Ellipse 1.png";
 
-interface CalendarHeaderProps {
+export interface CalendarHeaderProps {
   currentDate: Date;
   prevMonth: () => void;
   nextMonth: () => void;
   handleAuthClick: () => void;
-  isAuthenticated: boolean;
+  isAuthenticated: boolean | string | null;
   openCreateModal: () => void;
 }
 
@@ -46,12 +46,14 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
             label={arrowLeft}
             onClick={prevMonth}
             padding="px-4 py-2"
+            width={null}
           />
           <Button
             color="gray"
             label={arrowRight}
             onClick={nextMonth}
             padding="px-4 py-2"
+            width={null}
           />
         </div>
         <div className="flex flex-row items-center ml-[3.75rem] gap-3 px">
@@ -60,6 +62,7 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
             label={isAuthenticated ? "+" : "Войти"}
             onClick={isAuthenticated ? openCreateModal : handleAuthClick}
             padding="px-8 py-[1rem]"
+            width={null}
           />
           {isAuthenticated && (
             <img

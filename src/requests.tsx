@@ -59,7 +59,7 @@ export const getCurrentUser = async (userToken: string) => {
 	}
 };
 
-export const getAllUsers = async (userToken: string) => {
+export const getAllUsers = async (userToken: string | null) => {
 	try {
 		const response = await axios.get(`${BASE_URL}/users`, {
 			headers: getHeaders(userToken),

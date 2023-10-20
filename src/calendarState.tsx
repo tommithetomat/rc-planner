@@ -15,7 +15,7 @@ export function useCalendarState() {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [eventOpen, setEventOpen] = useState(false);
-  const [selectedEventIndex, setSelectedEventIndex] = useState(null);
+  const [selectedEventIndex, setSelectedEventIndex] = useState(null || 0);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isCreateEventModalOpen, setIsCreateEventModalOpen] = useState(false);
   const [isJoinEventModalOpen, setIsJoinEventModalOpen] = useState(false);

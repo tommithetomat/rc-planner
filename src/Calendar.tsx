@@ -1,9 +1,7 @@
 import React from "react";
-import {
-	EventInfoModalProps,
-	LeaveEventProps,
-	CreateModalProps,
-} from "./types";
+import { EventInfoModalProps } from "./Event";
+import { LeaveEventProps } from "./LeaveEvent";
+import { CalendarHeaderProps } from "./CalendarHeader";
 import { useCalendarState } from "./calendarState";
 import { CalendarHeader } from "./CalendarHeader";
 import { CalendarGrid } from "./CalendarGrid";
@@ -68,30 +66,32 @@ export const Calendar: React.FC = () => {
 				/>
 			)}
 			{isAuthModalOpen && <AuthModal onClose={closeAuthModal} />}
-			{isJoinEventModalOpen && (
+			{isJoinEventModalOpen && selectedEvent ? (
 				<JoinEvent
 					event={selectedEvent}
 					onClose={() => setIsJoinEventModalOpen(false)}
 				/>
-			)}
-			{isLeaveEventModalOpen && selectedEvent && (
+			) : null}
+			{isLeaveEventModalOpen && selectedEvent ? (
 				<LeaveEvent
 					event={selectedEvent}
 					userToken={null}
-					onClose={() => setIsLeaveEventModalOpen(false)}
-				/>
-			)}
-			{newEventModalData && newEventData && (
+					onClose={() => setIsLeaveEventModalOpen(false)} leaveModal={function (): void {
+						throw new Error("Function not implemented.");
+					} }				/>
+			) : null}
+			{newEventModalData && newEventData ? (
 				<CreateModal
 					event={newEventData}
 					userToken={null}
 					onClose={() => setNewEventDataModal(false)}
 				/>
-			)}
+			) : null}
 			{isCancelEventModalOpen && (
 				<LeaveNewEvent
-					onClose={() => setIsCancelEventModalOpen(false)}
-				/>
+					onClose={() => setIsCancelEventModalOpen(false)} newEventLeaveModal={function (): void {
+						throw new Error("Function not implemented.");
+					} }				/>
 			)}
 			{isCreateEventModalOpen && (
 				<CreateEvent onClose={closeCreateEventModal} />

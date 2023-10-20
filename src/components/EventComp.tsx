@@ -10,14 +10,16 @@ const propertyComp = {
 
 const whatFigure = {
   circle: <div className="p-px text-red-600 justify-center items-center flex">●</div>,
-  star: <div className="p-px text-white justify-center items-center flex">✦</div>
+  star: <div className="p-px text-white justify-center items-center flex">✦</div>,
+  default: ''
 }
 
-interface EventComponentProps {
+export interface EventComponentProps {
   dateStart: string;
   label: string;
-  onEvent: 'accede' | 'created';
-  figure: 'circle' | 'star';
+  onEvent: 'accede' | 'created' | 'default' ;
+  figure: 'circle' | 'star' | 'default';
+  onClick: () => void
 }
 
 export const EventComponent: React.FC<EventComponentProps> = ({ dateStart, label, onEvent, figure, ...props }) => {
@@ -27,6 +29,7 @@ export const EventComponent: React.FC<EventComponentProps> = ({ dateStart, label
   const property = onEvent === 'accede' && !pastDate ? 'accede' : onEvent === 'created' && !pastDate ? 'created' : pastDate ? 'past' : 'future';
 
   const compClass = propertyComp[property];
+
   const fig = whatFigure[figure];
 
   const allClasses = [compClass, genClasses].join(" ");

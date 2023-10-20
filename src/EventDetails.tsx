@@ -2,7 +2,7 @@ import React from "react";
 import { parseISO } from "date-fns";
 import { formatDate, dayOfTheWeek, formatTime } from "./func";
 import info from "./img/Info.png";
-import  {EventInfoModalProps}  from "./Event";
+import {EventInfoModalProps} from "./Event";
 
 interface EventDetailsProps {
   event: EventInfoModalProps["event"];

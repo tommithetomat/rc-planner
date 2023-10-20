@@ -2,15 +2,15 @@ import React, { useState, ChangeEvent } from "react";
 import closeEye from "../img/closeEye.png";
 import openEye from "../img/openEye.png";
 
-interface InputProps {
+export interface InputProps {
   label: string;
   value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void | any;
   placeholder: string;
   error: string | null;
   maxLength?: number;
-  size: "small" | "big" | "medium" | "";
-  typeOf: "password" | "description";
+  size: "small" | "big" | "medium" | null;
+  typeOf: "password" | "description" | null;
   width: string | null;
   showhide: true | false | null;
   right: string | null;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Participant } from "./components/Participant";
 import { EventInfoModalProps } from "./Event";
 interface EventParticipantsProps {
-  participants: EventInfoModalProps["event"]["participants"];
+  participants: EventInfoModalProps['event']['participants'];
   owner: EventInfoModalProps["event"]["participants"][0]["id"];
 }
 

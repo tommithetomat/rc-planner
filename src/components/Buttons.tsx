@@ -13,12 +13,14 @@ const borderClasses = {
     default: "",
 };
 
-type ButtonProps = {
+export type ButtonProps = {
     color?: 'red' | 'black' | 'gray' | 'default';
     label: any;
     padding?: string;
-    width: string;
+    width: string | null;
     border?: 'red' | 'black' | 'default';
+    onClick: any;
+    disabled?: boolean;
 };
 
 export const Button: React.FC<ButtonProps> = ({ color = 'default', label, padding, width, border = 'default', ...props }) => {

@@ -8,7 +8,7 @@ import LeaveEvent from "./LeaveEvent";
 import { parseISO } from "date-fns";
 import {AuthModal} from "./AuthModal"; 
 
-interface EventInfoModalProps {
+export interface EventInfoModalProps {
   event: {
     id: number;
     dateStart: string;
@@ -54,10 +54,10 @@ interface EventInfoModalProps {
       username: string;
       createdAt: string;
     }>;
-    owner?: {
+    owner: {
       id: number;
     };
-  } | null;
+  };
   onClose: () => void;
   joinEventModalOpen: (isOpen: boolean) => void;
 }
@@ -130,7 +130,7 @@ export const EventInfoModal: React.FC<EventInfoModalProps> = ({
         </button>
         {event && <EventDetails event={event} />}
         {isAuthenticated && event && (
-          <EventParticipants participants={event.participants} owner={event.owner?.id} />
+          <EventParticipants participants={event.participants} owner={event.owner.id} />
         )}
         {event && <EventPhotos photos={event.photos} />}
         {isEventActive && (
@@ -157,10 +157,9 @@ export const EventInfoModal: React.FC<EventInfoModalProps> = ({
               </div>
             ) : (
               <Button
-                label="Присоединиться к событию"
-                color="black"
-                onClick={handleJoinEvent}
-              />
+                    label="Присоединиться к событию"
+                    color="black"
+                    onClick={handleJoinEvent} width={null}              />
             )}
           </div>
         )}
