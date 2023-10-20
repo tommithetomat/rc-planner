@@ -9,7 +9,6 @@ import {
 	subMonths,
 	addMonths,
 	isSameDay,
-	DateType,
 } from "date-fns";
 
 export function useCalendarState() {
@@ -23,8 +22,7 @@ export function useCalendarState() {
 	const [isJoinEventModalOpen, setIsJoinEventModalOpen] = useState(false);
 	const [isLeaveEventModalOpen, setIsLeaveEventModalOpen] = useState(false);
 	const [isCancelEventModalOpen, setIsCancelEventModalOpen] = useState(false);
-	const [isLeaveNewEventModalOpen, setIsLeaveNewEventModalOpen] =
-		useState(false);
+	const [isLeaveNewEventModalOpen, setIsLeaveNewEventModalOpen] = useState(false);
 	const [newEventData, setNewEventData] = useState();
 	const [newEventModalData, setNewEventDataModal] = useState(false);
 
@@ -107,16 +105,16 @@ export function useCalendarState() {
 		setCurrentDate(addMonths(currentDate, 1));
 	};
 
-	const handleEventClick = (event: any, index: number) => {
+	const handleEventClick = (event, index) => {
 		setSelectedEvent(event);
 		setSelectedEventIndex(index);
 		setEventOpen(true);
 	};
 
-	const isToday = (date: DateType) => isSameDay(date, new Date());
+	const isToday = (date) => isSameDay(date, new Date());
 
-	const weeks: DateType[][] = [];
-	let week: DateType[] = [];
+	const weeks = [];
+	let week = [];
 	for (let day = startDate; day <= endDate; day = addDays(day, 1)) {
 		week.push(day);
 
@@ -138,7 +136,7 @@ export function useCalendarState() {
 
 	const closeCreateEventModal = () => {
 		setIsCreateEventModalOpen(false);
-		!isLeaveNewEventModalOpen && setNewEventDataModal(true)
+		!isLeaveNewEventModalOpen && setNewEventDataModal(true);
 	};
 
 	return {

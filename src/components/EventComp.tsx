@@ -13,11 +13,18 @@ const whatFigure = {
   star: <div className="p-px text-white justify-center items-center flex">✦</div>
 }
 
-export const EventComponent = ({ dateStart, label, onEvent, figure, ...props }) => {
+interface EventComponentProps {
+  dateStart: string;
+  label: string;
+  onEvent: 'accede' | 'created';
+  figure: 'circle' | 'star';
+}
+
+export const EventComponent: React.FC<EventComponentProps> = ({ dateStart, label, onEvent, figure, ...props }) => {
   const currentDate = new Date();
   const eventDate = new Date(dateStart);
   const pastDate = eventDate < currentDate;
-  const property = onEvent === 'accede' && ! pastDate ? 'accede' : onEvent === 'created' && ! pastDate ? 'created' : pastDate ? 'past' : 'future';
+  const property = onEvent === 'accede' && !pastDate ? 'accede' : onEvent === 'created' && !pastDate ? 'created' : pastDate ? 'past' : 'future';
 
   const compClass = propertyComp[property];
   const fig = whatFigure[figure];
@@ -26,7 +33,7 @@ export const EventComponent = ({ dateStart, label, onEvent, figure, ...props }) 
 
   return (
     <div className={`${allClasses} max-w-[100%] w-fit`} {...props} >
-      {fig} 
+      {fig}
       <span className='truncate'>{label}</span>
     </div>
   );

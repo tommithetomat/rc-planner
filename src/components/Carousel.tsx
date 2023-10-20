@@ -3,7 +3,7 @@ import { arrowLeft, arrowRight } from "../all-func";
 import { Button } from "./Buttons";
 
 interface CustomSliderProps {
-	images: string[];
+	images: { url: string }[];
 }
 
 const BASE_URL = "https://planner.rdclr.ru";

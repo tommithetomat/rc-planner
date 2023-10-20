@@ -13,7 +13,15 @@ const borderClasses = {
     default: "",
 };
 
-export const Button = ({ color = 'default', label, padding, width, border = 'default', ...props }) => {
+type ButtonProps = {
+    color?: 'red' | 'black' | 'gray' | 'default';
+    label: string;
+    padding?: string;
+    width: string;
+    border?: 'red' | 'black' | 'default';
+};
+
+export const Button: React.FC<ButtonProps> = ({ color = 'default', label, padding, width, border = 'default', ...props }) => {
     const btnClasses = useMemo(() => {
         const baseClasses = `${!padding ? 'px-8 py-4' : padding} ${width} rounded-xl justify-center items-center gap-2 inline-flex text-[18px] font-redcollar leading-none font-normal`;
         const colorClass = colorClasses[color];
