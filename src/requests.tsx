@@ -197,13 +197,7 @@ export const uploadFile = async (
 	userToken: string
 ) => {
 	try {
-		const formData = new FormData();
-		for (const key in fileData) {
-			if (Object.prototype.hasOwnProperty.call(fileData, key)) {
-				formData.append(key, fileData[key]);
-			}
-		}
-		const response = await axios.post(`${BASE_URL}/upload`, formData, {
+		const response = await axios.post(`${BASE_URL}/upload`, fileData, {
 			headers: {
 				...getHeaders(userToken),
 				"Content-Type": "multipart/form-data",

@@ -36,6 +36,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
     const passwordRegex = /^[A-Za-z0-9.,:;?!*+%<>\[\]{}\\_{}$#@\-]{8,32}$/;
     return passwordRegex.test(value);
   };
+  console.log(step)
 
   const handleNextStep = async () => {
     const parts = email.split("@");
@@ -53,7 +54,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
       return;
     }
 
-    if (step !== 3 && !validatePassword(password)) {
+    if (step == 3 && !validatePassword(password)) {
       setError("Пароль не соответствует требованиям.");
       return;
     }
@@ -72,12 +73,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
   const handleLogin = async () => {
     try {
       const loginResponse = await loginUser(email, password);
-      console.log("Пользователь успешно вошел:", loginResponse);
 
       localStorage.setItem("authToken", loginResponse.jwt);
       localStorage.setItem("userId", loginResponse.user.id);
       localStorage.setItem("isAuthenticated", "true");
-      console.log("Voshel: " + loginResponse.user.id);
 
       onClose();
     } catch (error) {
@@ -116,7 +115,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
       setUsername("");
       setIsRegistered(null);
 
-      console.log("Пользователь успешно зарегистрирован:", response);
     } catch (error) {
       console.error("Ошибка регистрации пользователя:", error);
     }
