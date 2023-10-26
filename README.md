@@ -1,3 +1,9 @@
+- ## 1. Скачать проект
+- ## 2. Установить необходимые модули через `npm i`
+- ## 3. Запустить проект через `npm run dev`
+  
+============================================================================================
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
